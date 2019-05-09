@@ -4,7 +4,8 @@ import faker from 'faker';
 
 //const CommentDetail is a reusable component. Components
 // use uppercase naming convention.
-const CommentDetail = () => {
+const CommentDetail = (props) => {
+	console.log(props);
 	return(
 		// "ui container comments", "comment", "avatar", "metadata"
 		//	"date", "content", "author", "text" are all classes from 
@@ -17,7 +18,9 @@ const CommentDetail = () => {
 				<img alt="avatar" src={faker.image.avatar()}/>
 			</a>
 			<div className="content">
-				<a href="/" className="author">Bob</a>
+				{/*props.author calls the author prop referenced in index.js
+					within the Comment Detail component tage*/}
+				<a href="/" className="author">{props.author}</a>
 				<div className="metadata">
 					<span className="date"> Today at 6:00PM</span>
 				</div>
