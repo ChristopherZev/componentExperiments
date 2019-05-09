@@ -38,6 +38,8 @@ import ApprovalCard from './ApprovalCard';
 //component. The nested/child component is reusable and will always have the ability 
 //to be referenced via the "props.children" object. To nest a component within a component
 //you need to use 2 tags i.e. (<ApprovalCard></ApprovalCard>) instead of a self-closing tag
+//ApprovalCard can also be used to house many other elements as long as within the 
+//ApprovalCard component you are using props.children  
 
 const App = () => {
 	return (
@@ -45,6 +47,15 @@ const App = () => {
 		<div className="ui container comments">
 			
 			<ApprovalCard>
+				<div>
+					<h4>Alert!</h4>
+					This can ApprovalCard can be reused for many elements!
+				</div>
+			</ApprovalCard>
+
+			<ApprovalCard>
+				Below are examples of using props.children to reference 
+				the CommentDetail comp. within the ApprovalCard comp. 
 				<CommentDetail 
 					author="Sam" 
 					postTime="Today at 3:30pm" 
